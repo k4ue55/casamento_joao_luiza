@@ -1,133 +1,192 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Casamento João & Luiza</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora&display=swap" rel="stylesheet" />
   <style>
-    body {
+    :root {
+      --rosa-claro: #d38b84;
+      --rosa-escuro: #bb6f69;
+      --texto: #5a3e36;
+      --fundo: rgba(255, 255, 255, 0.95);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-image: url(background.jpg); /* Substitua pela imagem real */
+    }
+
+    body {
+      font-family: 'Lora', serif;
+      background-image: url('background.jpg'); /* Substitua pela imagem real */
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
-      color: #5a3e36;
+      color: var(--texto);
       text-align: center;
     }
 
     .overlay {
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 40px 20px;
+      background-color: var(--fundo);
+      padding: 4vh 5vw;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    h1 {
+    .header-decorated {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .header-decorated h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 4em;
+      font-size: 4rem;
       color: #b85c5c;
-      margin-bottom: 10px;
+      margin: 0;
     }
 
     .subtitle {
-      font-size: 1.4em;
-      margin-bottom: 40px;
-      padding: 0 10px;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
     }
 
     .card {
+      width: 100%;
       max-width: 600px;
       margin: 0 auto;
       background: #fff;
       border-radius: 15px;
-      padding: 30px;
+      padding: 2rem;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .card p {
-      font-size: 1.1em;
-      margin: 15px 0;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      word-wrap: break-word;
     }
 
     .maps-link,
     .confirm-btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background-color: #d38b84;
+      margin-top: 1.2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--rosa-claro);
       color: white;
       border: none;
       text-decoration: none;
       font-weight: bold;
       border-radius: 10px;
       transition: background-color 0.3s ease;
+      font-size: 1rem;
     }
 
     .maps-link:hover,
     .confirm-btn:hover {
-      background-color: #bb6f69;
+      background-color: var(--rosa-escuro);
     }
 
     footer {
-      margin-top: 50px;
-      font-size: 0.9em;
+      margin-top: 3rem;
+      font-size: 0.9rem;
       color: #8b6d66;
     }
 
-    /* Responsividade */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.8em;
+    svg.flower {
+      width: 40px;
+      height: 40px;
+      fill: #bb6f69;
+    }
+
+    /* Responsividade aprimorada */
+    @media (max-width: 768px) {
+      .header-decorated h1 {
+        font-size: 3rem;
       }
 
       .subtitle {
-        font-size: 1.2em;
+        font-size: 1.2rem;
       }
 
       .card {
-        padding: 20px;
-        margin: 20px 10px;
+        padding: 1.5rem;
       }
 
       .card p {
-        font-size: 1em;
+        font-size: 1.05rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-decorated h1 {
+        font-size: 2.4rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .card {
+        padding: 1.2rem;
+        margin: 1rem 0.5rem;
+      }
+
+      .card p {
+        font-size: 1rem;
       }
 
       .maps-link,
       .confirm-btn {
         width: 100%;
-        max-width: 280px;
-        font-size: 1em;
+        max-width: 300px;
+        font-size: 1rem;
+      }
+
+      svg.flower {
+        width: 30px;
+        height: 30px;
       }
     }
   </style>
 </head>
 <body>
-
   <div class="overlay">
-    <h1>João & Luiza</h1>
+    <div class="header-decorated">
+      <svg class="flower" viewBox="0 0 64 64">
+        <path d="M32 0C20 20 0 20 0 32s20 12 32 32c12-20 32-20 32-32S44 20 32 0z"/>
+      </svg>
+      <h1>João & Luiza</h1>
+      <svg class="flower" viewBox="0 0 64 64">
+        <path d="M32 0C20 20 0 20 0 32s20 12 32 32c12-20 32-20 32-32S44 20 32 0z"/>
+      </svg>
+    </div>
+
     <div class="subtitle">Com imensa alegria, convidamos você para o nosso casamento!</div>
 
     <div class="card">
       <p><strong>📅 Data:</strong> 19 de setembro de 2025</p>
       <p><strong>🕦 Horário:</strong> 11:30 da manhã</p>
-      <p><strong>📍 Local:</strong> Rua WE 44-B, Coqueiro, Belém - PA, 66825-060</p>
+      <p><strong>📍 Local:</strong> Sítio do Tigrão - Rua Presidente Getúlio Vargas, nº 72, Belém - PA, 66825-060</p>
 
-      <a class="maps-link" href="https://www.google.com/maps/place/R.+WE+44-B,+Coqueiro,+Bel%C3%A9m+-+PA,+66825-060" target="_blank">Ver no Google Maps</a>
-      <br>
+      <a class="maps-link" href="https://maps.app.goo.gl/2VBmEg5CwrR88bxc6" target="_blank">Ver no Google Maps</a>
+      <br />
       <a class="confirm-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe0PjfAwoYDnDBGBv5IpNoB6lRtqyE1eYIyzwyiw73mjvNJwQ/viewform?usp=dialog" target="_blank">Confirmar Presença</a>
     </div>
 
     <footer>
-      Com amor, João & Luiza ❤️<br>
+      Com amor, João & Luiza ❤️<br />
       Esperamos por você!
     </footer>
   </div>
-
 </body>
 </html>
